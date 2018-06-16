@@ -18,7 +18,7 @@ void gameLoop(char board[][3]);
 _Bool checkForWin(char board[3][3]);
 
 int main(int argc, const char * argv[]) {
-    char board[3][3] = { { NULL }, { NULL }, { NULL } };
+    char board[3][3] = { { NULL, NULL, NULL }, { NULL, NULL, NULL }, { NULL, NULL, NULL } };
     gameLoop(board);
     return 0;
 }
@@ -26,6 +26,7 @@ int main(int argc, const char * argv[]) {
 void gameLoop(char board[][3]) {
     while(!checkForWin(board)) {
         printBoard(board, 3);
+        playTurn(board);
     }
 }
 
@@ -56,7 +57,6 @@ void placeOnBoard(int row, int column, char board[][3], char symbol) {
 }
 
 void printBoard(char board[][3], int boardSize) {
-    playTurn(board);
     for(int row = 0; row < boardSize; row++) {
         for(int column = 0; column < boardSize; column++) {
             if(board[row][column] == NULL) {
@@ -82,17 +82,19 @@ bool rowIsWon(char row[]) {
 
 bool checkRows(board[3][3]) {
     _Bool gameOver = false;
-    char *firstElement = &board;
     for(int i = 0; i < 3; i++) {
-        if (rowIsWon(board[i])) {
+        if (rowIsWon(board)) {
             gameOver = true;
         }
+        board++;
     }
     return gameOver;
 }
 
 bool checkForWin(char board[3][3]) {
     _Bool gameOver = false;
+    char boardPointer = *board;
+    
     if (checkRows(board)) {
         gameOver = true;
     }
