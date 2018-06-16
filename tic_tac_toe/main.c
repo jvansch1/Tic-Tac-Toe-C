@@ -83,7 +83,7 @@ bool rowIsWon(char row[]) {
 bool checkRows(board[3][3]) {
     bool gameOver = false;
     for(int i = 0; i < 3; i++) {
-        if (rowIsWon(board)) {
+        if (rowIsWon(board[i])) {
             gameOver = true;
         }
         board++;
