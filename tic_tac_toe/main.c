@@ -15,7 +15,7 @@ int getColumnIndex();
 void playTurn();
 void placeOnBoard(int row, int column, char board[][3], char symbol);
 void gameLoop(char board[][3]);
-_Bool checkForWin(char board[3][3]);
+bool checkForWin(char board[3][3]);
 
 int main(int argc, const char * argv[]) {
     char board[3][3] = { { NULL, NULL, NULL }, { NULL, NULL, NULL }, { NULL, NULL, NULL } };
@@ -81,7 +81,7 @@ bool rowIsWon(char row[]) {
 }
 
 bool checkRows(board[3][3]) {
-    _Bool gameOver = false;
+    bool gameOver = false;
     for(int i = 0; i < 3; i++) {
         if (rowIsWon(board)) {
             gameOver = true;
@@ -92,7 +92,7 @@ bool checkRows(board[3][3]) {
 }
 
 bool checkForWin(char board[3][3]) {
-    _Bool gameOver = false;
+    bool gameOver = false;
     char boardPointer = *board;
     
     if (checkRows(board)) {
