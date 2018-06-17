@@ -73,14 +73,10 @@ void printBoard(char board[][3], int boardSize) {
 }
 
 bool rowIsWon(char row[]) {
-    if ((row[0] == 'X' && row[1] == 'X' && row[2] == 'X') || (row[0] == 'O' && row[1] == 'O' && row[2] == 'O')) {
-        return true;
-    } else {
-        return false;
-    }
+    return row[0] == row[1] && row[0] ==  row[2];
 }
 
-bool checkRows(board[3][3]) {
+bool checkRows(char board[3][3]) {
     bool gameOver = false;
     for(int i = 0; i < 3; i++) {
         if (rowIsWon(board[i])) {
