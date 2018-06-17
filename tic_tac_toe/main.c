@@ -7,15 +7,7 @@
 //
 
 #include <stdio.h>
-#include <stdbool.h>
 #include "tic_tac_toe.h"
-
-int getRowIndex();
-int getColumnIndex();
-void playTurn(char board[][3], char cymbol);
-void placeOnBoard(int row, int column, char board[][3], char symbol);
-void gameLoop(char board[][3]);
-bool checkForWin(char board[3][3]);
 
 int main(int argc, const char * argv[]) {
     char board[3][3] = { {0} };
